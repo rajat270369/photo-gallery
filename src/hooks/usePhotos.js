@@ -7,7 +7,7 @@ function usePhotos()
     const[loading,setLoading]= useState(true);
 
     const[error, setError]= useState("");
-}
+
 
 useEffect(() =>{
 
@@ -26,7 +26,7 @@ useEffect(() =>{
 
         setPhotos(data);
     }   
-    cetch(err){
+    catch(err){
 
         setError(err.message || "something went wrong");
 
@@ -40,3 +40,8 @@ useEffect(() =>{
     }
     getPhotos();
 }, []);
+
+return {photos,loading,error};
+}
+
+export default usePhotos;
