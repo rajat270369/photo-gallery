@@ -7,7 +7,7 @@ import {
   useMemo,
 } from "react";
 
-import usePhotos from "./hooks/usePhotos";
+import usePhotos from "./hooks/useFetchPhotos";
 import PhotoCard from "./components/PhotoCard";
 import favoritesReducer from "./reducers/favoritesReducer";
 
@@ -30,7 +30,7 @@ function App() {
     }
   );
 
-  // Save favourites whenever they change
+  // Saves Favourites when a change occurs
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
@@ -47,7 +47,7 @@ function App() {
     );
   }, [photos, searchTerm]);
 
-  // Toggle favourite
+  // Toggle 
   function handleToggleFavorite(photoId) {
     dispatch({
       type: "TOGGLE_FAVORITE",
@@ -73,7 +73,7 @@ function App() {
           />
 
           <p className="font-semibold text-gray-700">
-            ❤️ Favourites: {favorites.length}
+            🩵 Favourites: {favorites.length}
           </p>
         </div>
 
